@@ -22,6 +22,10 @@
                 <TextBox x:Name="messageTextBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="40"/>
                 <Button Margin="0 10 0 0" x:Name="szyfrujButton" Content="Szyfruj" Width="60" HorizontalAlignment="Left" Click="szyfrujButton_Click"/>
                 <Button Margin="0 10 0 10" x:Name="deszyfrujButton" Content="Deszyfruj" Width="60" HorizontalAlignment="Left" Click="deszyfrujButton_Click"/>
+
+                <Button Margin="0 10 0 0" x:Name="podpiszButton" Content="Podpisz" Width="60" HorizontalAlignment="Left" Click="podpiszButton_Click"/>
+                <Button Margin="0 10 0 0" x:Name="sprawdzPdopisButton" Content="Sprawdz podpisz" Width="100" HorizontalAlignment="Left" Click="sprawdzPdopisButton_Click"/>
+
                 <TextBox x:Name="outputMessageTextBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="40"/>
 
             </StackPanel>

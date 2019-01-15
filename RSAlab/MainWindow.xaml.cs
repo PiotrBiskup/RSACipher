@@ -71,6 +71,45 @@ namespace RSAlab
            
         }
 
+        private void podpiszButton_Click(object sender, RoutedEventArgs evg)
+        {
+            outputMessageTextBox.Clear();
+            ArrayList listOfInt = TurnMessageIntoArrayOfASCIICode(messageTextBox.Text);
+            zaszyfrowanaLista = new ArrayList();
+
+            BigInteger power = 0;
+
+            foreach (int liczba in listOfInt)
+            {
+                power = BigInteger.Pow(liczba, d);
+                int wynik = (int)(power % n);
+
+                zaszyfrowanaLista.Add(wynik);
+            }
+
+            foreach (int liczba in zaszyfrowanaLista)
+            {
+                outputMessageTextBox.Text += liczba + " ";
+            }
+        }
+
+        private void sprawdzPdopisButton_Click(object sender, RoutedEventArgs evg)
+        {
+            deszyfrowanaLista = new ArrayList();
+            outputMessageTextBox.Clear();
+            BigInteger power = 0;
+            foreach (int liczba in zaszyfrowanaLista)
+            {
+                power = BigInteger.Pow(liczba, e);
+                int wynik = (int)(power % n);
+
+                deszyfrowanaLista.Add(wynik);
+            }
+
+
+            outputMessageTextBox.Text = deszyfruj(deszyfrowanaLista);
+        }
+
         private void szyfrujButton_Click(object sender, RoutedEventArgs en)
         {
             outputMessageTextBox.Clear();
